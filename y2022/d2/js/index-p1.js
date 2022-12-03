@@ -1,26 +1,6 @@
 const fs = require("fs");
 const input = fs.readFileSync("../input.txt", "utf8");
-
-const SHAPE_POINTS = {
-  X: 1,
-  Y: 2,
-  Z: 3,
-};
-
-const OUTCOME_POINTS = {
-  win: 6,
-  draw: 3,
-  lose: 0,
-};
-
-const SHAPE_MAP = {
-  A: "rock",
-  B: "paper",
-  C: "scissors",
-  X: "rock",
-  Y: "paper",
-  Z: "scissors",
-};
+const { SHAPE_POINTS, OUTCOME_POINTS, SHAPE_MAP } = requite("./constants.js");
 
 const mapPossibleOutcomesWithPoints = () => {
   const opponentShapes = ["A", "B", "C"];
@@ -35,7 +15,7 @@ const mapPossibleOutcomesWithPoints = () => {
     }
   }
   // Create new file with all possible outcomes
-  fs.writeFileSync("./outcomes.json", JSON.stringify(outcomes));
+  fs.writeFileSync("./outcomes-p1.json", JSON.stringify(outcomes));
   return outcomes;
 };
 

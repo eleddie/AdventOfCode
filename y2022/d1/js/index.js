@@ -16,3 +16,10 @@ data.forEach((foodItem) => {
 const max = Math.max(...elvesFood);
 
 console.log(max);
+
+// Part 2: get sum of top 3
+
+const sorted = elvesFood.sort((a, b) => b - a);
+const top3 = sorted.slice(0, 3);
+const sum = top3.reduce((a, b) => a + b, 0);
+console.log(sum);
